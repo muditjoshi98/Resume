@@ -62,7 +62,7 @@
 \RequirePackage{url,parskip} 	    % other packages for formatting
 \RequirePackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fullpage}
-\RequirePackage[margin=1.5cm]{geometry}
+\RequirePackage[margin=0.75cm]{geometry}
 \RequirePackage{fontawesome}
 \RequirePackage{hyperref}
 \RequirePackage{titlesec}
@@ -79,7 +79,7 @@
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{090999}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
@@ -271,20 +271,20 @@
 % Needs \@firstname, \@lastname and \@tagline to be defined
 \newcommand*{\makecvheader}{
   \ifundef{\@alternative}{
-    \ifundef{\@photodiameter}{
-      \begin{minipage}{\linewidth}
-    }{
-      \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
-    }
+    %\ifundef{\@photodiameter}{
+    \begin{minipage}{\dimexpr(\linewidth/2)}
+    %}{
+    %  \begin{minipage}{\dimexpr\linewidth-\@photodiameter-2em}
+    %}
     \color{accentcolor}\user{\@firstname}{\@lastname}\\
     \medskip\large{\@tagline}\color{black}\\
+    %\small{\@socialinfo}
+    \end{minipage}
+    %\ifdef{\@photodiameter}{
+    \begin{minipage}{\dimexpr(\linewidth/2)}
     \small{\@socialinfo}
     \end{minipage}
-    \ifdef{\@photodiameter}{
-      \begin{minipage}{\@photodiameter}
-        \idphoto
-      \end{minipage}
-    }
+    %}
   }
 }
 
@@ -361,12 +361,12 @@
 %                      <Experience description (Could be a list)>
 %                    }
 %                    {<Technology list>}
-\newcommand\experience[7]{
+\newcommand\experience[6]{
   \color{accentcolor}#1    & \textbf{#2, \textsc{#3}, #4}   								\\*
   \color{accentcolor}#5    & \begin{minipage}[t]{\rightcolumnlength}
   					         #6
                    \end{minipage}\smallskip										\\*
-                 & \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
+                 %& \footnotesize{\foreach \n in {#7}{\cvtag{\n}}} 	\\
   }
 
 % Render a consultant experience in the experiences environment
@@ -387,7 +387,7 @@
                  & \footnotesize{\foreach \n in {#9}{\cvtag{\n}}} 	\\
   }
 
-\newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
+%\newcommand\emptySeparator{\multicolumn{2}{c}{}\\}
 
 % Define the 'projects' environment
 \newenvironment{projects}{%
@@ -403,14 +403,14 @@
 %   {<link1> <link2>}
 %   {<Project description>}
 %   {<techno1>,<techno2>}
-\newcommand\project[5]{
+\newcommand\project[4]{
   \begin{minipage}[t]{\dimexpr(\linewidth) - 1.5em}
     \textbf{\large\textsc{#1}} \hfill \color{accentcolor}\textsc{#2}\smallskip\\
     \color{black}
      #3\smallskip\\ 
     #4
    
-    \smallskip\footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
+    %\smallskip\footnotesize{\foreach \n in {#5}{\cvtag{\n}}}\\
   \medskip
   \end{minipage}
   \\
@@ -418,11 +418,11 @@
 
 
 \newcommand*\twocolumnsection[2]{
-  \begin{minipage}[t]{\dimexpr(\linewidth/2)}
+  \begin{minipage}[t]{\dimexpr(\linewidth/2) + 5em}
     #1
   \end{minipage}
   \hfill
-  \begin{minipage}[t]{\dimexpr(\linewidth/2) - 3em}
+  \begin{minipage}[t]{\dimexpr(\linewidth/2) - 8em}
     #2
   \end{minipage}
   }
@@ -465,4 +465,4 @@
                  & \begin{minipage}[t]{\rightcolumnlength}
   					         #4
                    \end{minipage}										\\
-  }
+}

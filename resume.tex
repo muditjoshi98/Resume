@@ -2,32 +2,32 @@
 % Link :
 
 \documentclass{resume}
-\name{\huge Mudit}{Joshi}
+\name{\Huge Mudit}{Joshi}
 \tagline{B.Tech Undergraduate at IIIT Jabalpur}
 %\photo{2.5cm}{darwiin}
 \socialinfo{
+    \vspace{-5mm}
+    \begin{flushright}
 	\linkedin{muditjoshi}
 	\github{muditjoshi98}\\
 	\smartphone{(+91) 8085044326}
 	\email{muditjoshi98@gmail.com}\\
 	\address{PDPM IIITDM Jabalpur, Madhya Pradesh}
+	\end{flushright}
 }
 \begin{document}
     \makecvheader
     
-    \pagestyle{fancy}
-    \fancyhf{}
-    \rfoot{\thepage}
-    \lfoot{Mudit Joshi~~~-~~~Resume}
-    
-    \medskip
-    \input{education}
     \vspace{-5mm}
-	\input{experience}
-    \vspace{-5mm}
-	\input{projects}
-    \vspace{-5mm}
-	\input{skills}
-	\input{achievements}
-	\input{eca}
+    \input{subs/education}
+    \vspace{-3mm}
+	\input{subs/experience}
+    \vspace{-3mm}
+	\input{subs/projects}
+    \vspace{-3mm}
+	\input{subs/skills}
+	\vspace{-3mm}
+	\input{subs/achievements}
+	\vspace{-3mm}
+	\input{subs/eca}
 \end{document}
