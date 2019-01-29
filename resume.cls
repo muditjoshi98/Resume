@@ -246,7 +246,11 @@
 
 % Render author's mobile phone (optional)
 % Usage: \smartphone{<mobile phone number>}
-\newcommand*\smartphone[1]{\socialtext{\mobileSymbol}{#1}}    
+\newcommand*\smartphone[1]{\socialtext{\mobileSymbol}{#1}}
+
+% Render author's skype id (optional)
+% Usage: \skype{<mobile phone number>}
+\newcommand*{\skype}[1]{\sociallink{\faSkype}{https://join.skype.com/invite/pL6Wwl53Y5pH}{#1}}
 
 % Render author's tagline
 \newcommand\resumetitle[1]{
